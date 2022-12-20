@@ -9,7 +9,7 @@ http://example.com/categories/index.html
 http://example.com/About/index.html
 http://example.com/link/index.html
 http://example.com/
-http://example.com/tags/%E8%AE%B0%E5%BD%95/
 http://example.com/tags/%E6%80%80%E5%BF%B5/
-http://example.com/categories/%E8%AE%B0%E5%BD%95/
+http://example.com/tags/%E8%AE%B0%E5%BD%95/
 http://example.com/categories/%E6%80%80%E5%BF%B5/
+http://example.com/categories/%E8%AE%B0%E5%BD%95/
