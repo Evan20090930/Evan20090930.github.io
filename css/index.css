@@ -7876,7 +7876,17 @@ font-style: normal;
   #page-header::before{
     background: transparent!important;
     }
-    
+
+/* 夜间模式菜单栏发光字 */
+[data-theme="dark"] #nav .site-page,
+[data-theme="dark"] #nav .menus_items .menus_item .menus_item_child li a {
+  text-shadow: 0 0 2px var(--theme-color) !important;
+}
+
+/* 手机端适配 */
+[data-theme="dark"] #sidebar #sidebar-menus .menus_items .site-page {
+  text-shadow: 0 0 2px var(--theme-color) !important;
+}    
     
 /*10s为加载动画的时间，1为加载动画的次数，ease-in-out为动画效果*/
 #page-header,
@@ -7935,6 +7945,86 @@ svg.icon.festival-decoration {
     transform-origin: center top;
   }
 }
+
+/* 搜索背景模糊 */
+ #search-mask {
+   backdrop-filter: blur(12px);
+   -webkit-backdrop-filter: blur(12px);
+   background: var(--heo-maskbg);
+ }
+ 
+ 
+/* 滚动条 */
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--heo-scrollbar);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--heo-main);
+  opacity: 1;
+  display: block !important;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--heo-none);
+}
+
+html {
+  overflow-y: overlay;
+}
+ 
+
+/* 文章目录 */
+#aside-content #card-toc .toc-content .toc-link.active {
+  line-height: 1.2;
+  border-radius: 12px;
+  border-left-color: var(--heo-hovertext);
+  background-color: var(--heo-card-bg);
+  color: var(--heo-lighttext);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+[data-theme=dark].toc .toc-item.active .toc-link .toc-text {
+  color: var(--heo-white);
+}
+
+#aside-content #card-toc .toc-content .toc-item.active .toc-link {
+  opacity: 1;
+  border-radius: 8px;
+}
+
+#aside-content #card-toc .toc-content .toc-link {
+  line-height: 1.2;
+  padding: 8px;
+  border-left: 0px solid transparent;
+  border-radius: 12px;
+  color: var(--heo-secondtext);
+  cursor: default;
+}
+
+#aside-content #card-toc .toc-content .toc-link:not(.active) span {
+  opacity: 0.6;
+  cursor: pointer;
+  filter: blur(1px);
+  transition: 0.3s;
+}
+
+#aside-content #card-toc:hover .toc-content .toc-link:not(.active) span {
+  filter: blur(0px);
+  opacity: 1;
+}
+
+#aside-content #card-toc .toc-content .toc-link:not(.active) span:hover {
+  color: var(--heo-lighttext);
+} 
 .search-dialog {
   position: fixed;
   top: 10%;
