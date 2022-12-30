@@ -207,7 +207,6 @@ template {
   -webkit-box-orient: vertical;
 }
 .fontawesomeIcon,
-hr:before,
 #post .post-copyright:before,
 #post .post-outdate-notice:before,
 .menu-list-item i::before,
@@ -1421,30 +1420,6 @@ h6 code {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
-hr {
-  position: relative;
-  margin: 40px auto;
-  border: 2px dashed var(--hr-border);
-  width: calc(100% - 4px);
-}
-hr:hover:before {
-  left: calc(95% - 20px);
-}
-hr:before {
-  position: absolute;
-  top: -10px;
-  left: 5%;
-  z-index: 1;
-  color: var(--hr-before-color);
-  content: '\f0c4';
-  font-size: 20px;
-  line-height: 1;
-  -webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  -o-transition: all 1s ease-in-out;
-  -ms-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
 }
 .table-wrap {
   overflow-x: scroll;
@@ -2928,6 +2903,75 @@ figure.highlight pre .javascript .function {
 h1.page-title + .tag-cloud-list {
   text-align: left;
 }
+:root {
+  --hr-line-color: #e91417;
+}
+[data-theme="dark"] {
+  --hr-line-color: #4db7d5;
+}
+hr {
+  position: relative;
+  margin: 40px auto;
+  display: block;
+  height: 20px;
+  width: 100%;
+  background: transparent;
+  border: none;
+}
+hr:hover::before {
+  clip-path: polygon(0 0, 60px 100%, calc(100% - 30px) 100%, 100% 50%, calc(100% - 15px) 50%, calc(100% - 35px) calc(100% - 5px), 65px calc(100% - 5px), 15px 0);
+  -webkit-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -moz-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -o-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -ms-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+}
+hr:hover::after {
+  clip-path: polygon(0 50%, 35px 0, calc(100% - 60px) 0, 100% 100%, calc(100% - 15px) 100%, calc(100% - 65px) 5px, 35px 5px, 15px 50%);
+  -webkit-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -moz-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -o-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -ms-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+}
+hr::before {
+  display: block;
+  content: "";
+  height: 20px;
+  width: calc(50% + 60px);
+  left: 0px;
+  position: absolute;
+  background: -webkit-linear-gradient(right, var(--hr-line-color), transparent);
+  background: -moz-linear-gradient(right, var(--hr-line-color), transparent);
+  background: -o-linear-gradient(right, var(--hr-line-color), transparent);
+  background: -ms-linear-gradient(right, var(--hr-line-color), transparent);
+  background: linear-gradient(to left, var(--hr-line-color), transparent);
+  clip-path: polygon(0 100%, 60px 0, calc(100% - 30px) 0, 100% 50%, calc(100% - 15px) 50%, calc(100% - 35px) 5px, 65px 5px, 15px 100%);
+  -webkit-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -moz-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -o-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -ms-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+}
+hr::after {
+  display: block;
+  content: "";
+  height: 20px;
+  width: calc(50% + 60px);
+  right: 0px;
+  position: absolute;
+  background: -webkit-linear-gradient(left, var(--hr-line-color), transparent);
+  background: -moz-linear-gradient(left, var(--hr-line-color), transparent);
+  background: -o-linear-gradient(left, var(--hr-line-color), transparent);
+  background: -ms-linear-gradient(left, var(--hr-line-color), transparent);
+  background: linear-gradient(to right, var(--hr-line-color), transparent);
+  clip-path: polygon(0 50%, 35px 100%, calc(100% - 60px) 100%, 100% 0, calc(100% - 15px) 0, calc(100% - 65px) calc(100% - 5px), 35px calc(100% - 5px), 15px 50%);
+  -webkit-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -moz-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -o-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -ms-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+}
 #aside-content {
   width: 26%;
 }
@@ -4118,6 +4162,300 @@ h1.page-title + .tag-cloud-list {
 }
 #post-comment .comment-wrap > div:nth-child(2) {
   display: none;
+}
+:root {
+  --card-widget-background: rgba(80,80,80,0.8);
+  --card-widget-color: #fff;
+  --card-widget-content-background: rgba(50,50,50,0.6);
+  --card-widget-content-border: rgba(117,118,120,0.8);
+  --card-widget-title-background: rgba(40,40,40,0.95);
+  --card-widget-title-color: #fff;
+  --card-widget-title-corner-background: #be7321;
+  --card-widget-title-corner-color: rgba(40,40,40,0.9);
+}
+[data-theme="dark"] {
+  --card-widget-background: rgba(39,66,69,0.6);
+  --card-widget-color: #fff;
+  --card-widget-content-background: rgba(23,25,27,0.5);
+  --card-widget-content-border: rgba(0,78,119,0.5);
+  --card-widget-title-background: rgba(10,17,35,0.5);
+  --card-widget-title-color: #004e77;
+  --card-widget-title-corner-background: #37708f;
+  --card-widget-title-corner-color: #92cef1;
+}
+.card-widget:not(.card-info) {
+  font-family: 'SAOUI', 'ZhuZiAYuanJWD';
+  background: -webkit-linear-gradient(top, transparent 30px, var(--card-widget-background) 31px, var(--card-widget-background)) !important;
+  background: -moz-linear-gradient(top, transparent 30px, var(--card-widget-background) 31px, var(--card-widget-background)) !important;
+  background: -o-linear-gradient(top, transparent 30px, var(--card-widget-background) 31px, var(--card-widget-background)) !important;
+  background: -ms-linear-gradient(top, transparent 30px, var(--card-widget-background) 31px, var(--card-widget-background)) !important;
+  background: linear-gradient(to bottom, transparent 30px, var(--card-widget-background) 31px, var(--card-widget-background)) !important;
+  padding: 20px 0px 0px 0px !important;
+  clip-path: polygon(0 0, 100% 0, 100% 30px, calc(100% - 60px) 30px, calc(100% - 50px) 45px, calc(100% - 5px) 45px, 100% 50px, 100% calc(100% - 5px), calc(100% - 5px) 100%, 5px 100%, 0 calc(100% - 5px), 0 45px, 10px 30px, 0 30px);
+}
+.card-widget:not(.card-info) .item-headline {
+  border-top: 8px solid var(--card-widget-title-corner-background);
+  border-left: 8px solid var(--card-widget-title-corner-background);
+  -webkit-box-shadow: 0px 0px 10px var(--card-widget-content-border) inset;
+  box-shadow: 0px 0px 10px var(--card-widget-content-border) inset;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 20px;
+  background: var(--card-widget-title-background);
+  color: var(--card-widget-color);
+  min-width: 8em;
+  width: fit-content;
+  clip-path: polygon(0 0, 55px 0, 60px 10px, calc(100% - 15px) 10px, 100% 30px, 100% 100%, 30px 100%, 8px 30px, 0 25px);
+  padding: 0px 1em 0px 1em;
+  margin: 0px 0px -20px 0px;
+  position: relative;
+  top: -20px;
+  left: 0px;
+}
+.card-widget:not(.card-info) .item-headline:after {
+  content: "akilar";
+  position: absolute;
+  bottom: 0;
+  font-size: 12px;
+  display: block;
+  right: 0;
+  line-height: 1em;
+  color: var(--card-widget-title-corner-color);
+  width: fit-content;
+  height: 1em;
+  padding: 0 5px 0 10px;
+  background: var(--card-widget-title-corner-background);
+  clip-path: polygon(5px 0, 100% 0, 100% 100%, 0 100%);
+}
+.card-widget:not(.card-info)#card-toc .toc-percentage {
+  position: absolute;
+  margin: -7px 0px 0px 10px !important;
+  font-size: 26px !important;
+}
+.card-widget:not(.card-info)#card-toc .toc-content {
+  position: relative;
+  margin: 5px 5px 5px 5px !important;
+  background: var(--card-widget-content-background);
+  padding: 5px 5px 5px 8px;
+  border: 2px solid var(--card-widget-content-border);
+  border-top-right-radius: 3px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 10px;
+  clip-path: polygon(0 10px, 10px 0, calc(100% - 3px) 0, 100% 3px, 100% calc(100% - 3px), calc(100% - 3px) 100%, 10px 100%, 0 calc(100% - 10px));
+  -webkit-box-shadow: 0 0 5px var(--card-widget-content-border) inset;
+  box-shadow: 0 0 5px var(--card-widget-content-border) inset;
+}
+.card-widget:not(.card-info)#card-toc .toc-content:not(.card-friend-link-container)::before {
+  content: "";
+  width: 0px;
+  height: calc(100% - 20px);
+  position: absolute;
+  left: 0;
+  top: 5px;
+  background: var(--card-widget-content-background);
+  border-top: 5px solid var(--card-widget-content-border);
+  border-right: 5px solid var(--card-widget-content-border);
+  border-bottom: 5px solid var(--card-widget-content-border);
+  border-left: 5px solid transparent;
+  clip-path: polygon(0 0, 7px 5px, 7px calc(100% - 5px), 0 100%);
+}
+.card-widget:not(.card-info)#card-toc .toc-content .toc-link {
+  color: var(--card-widget-color) !important;
+}
+.card-widget:not(.card-info) .card-friend-link-container {
+  position: relative;
+  margin: 5px 5px 5px 5px !important;
+  background: var(--card-widget-content-background);
+  padding: 5px 5px 5px 8px;
+  border: 2px solid var(--card-widget-content-border);
+  border-top-right-radius: 3px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 10px;
+  clip-path: polygon(0 10px, 10px 0, calc(100% - 3px) 0, 100% 3px, 100% calc(100% - 3px), calc(100% - 3px) 100%, 10px 100%, 0 calc(100% - 10px));
+  -webkit-box-shadow: 0 0 5px var(--card-widget-content-border) inset;
+  box-shadow: 0 0 5px var(--card-widget-content-border) inset;
+}
+.card-widget:not(.card-info) .card-friend-link-container:not(.card-friend-link-container)::before {
+  content: "";
+  width: 0px;
+  height: calc(100% - 20px);
+  position: absolute;
+  left: 0;
+  top: 5px;
+  background: var(--card-widget-content-background);
+  border-top: 5px solid var(--card-widget-content-border);
+  border-right: 5px solid var(--card-widget-content-border);
+  border-bottom: 5px solid var(--card-widget-content-border);
+  border-left: 5px solid transparent;
+  clip-path: polygon(0 0, 7px 5px, 7px calc(100% - 5px), 0 100%);
+}
+.card-widget:not(.card-info) .aside-list {
+  position: relative;
+  margin: 5px 5px 5px 5px !important;
+  background: var(--card-widget-content-background);
+  padding: 5px 5px 5px 8px;
+  border: 2px solid var(--card-widget-content-border);
+  border-top-right-radius: 3px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 10px;
+  clip-path: polygon(0 10px, 10px 0, calc(100% - 3px) 0, 100% 3px, 100% calc(100% - 3px), calc(100% - 3px) 100%, 10px 100%, 0 calc(100% - 10px));
+  -webkit-box-shadow: 0 0 5px var(--card-widget-content-border) inset;
+  box-shadow: 0 0 5px var(--card-widget-content-border) inset;
+}
+.card-widget:not(.card-info) .aside-list:not(.card-friend-link-container)::before {
+  content: "";
+  width: 0px;
+  height: calc(100% - 20px);
+  position: absolute;
+  left: 0;
+  top: 5px;
+  background: var(--card-widget-content-background);
+  border-top: 5px solid var(--card-widget-content-border);
+  border-right: 5px solid var(--card-widget-content-border);
+  border-bottom: 5px solid var(--card-widget-content-border);
+  border-left: 5px solid transparent;
+  clip-path: polygon(0 0, 7px 5px, 7px calc(100% - 5px), 0 100%);
+}
+.card-widget:not(.card-info) .aside-list .aside-list-item .thumbnail img {
+  clip-path: polygon(50% 0%, 95.5% 25%, 95.5% 75%, 50% 100%, 4.5% 75%, 4.5% 25%);
+}
+.card-widget:not(.card-info) .aside-list .aside-list-item .content .title {
+  color: var(--card-widget-color) !important;
+}
+.card-widget:not(.card-info) .aside-list .aside-list-item .comment {
+  color: var(--card-widget-color) !important;
+}
+.card-widget:not(.card-info) .card-tag-cloud {
+  position: relative;
+  margin: 5px 5px 5px 5px !important;
+  background: var(--card-widget-content-background);
+  padding: 5px 5px 5px 8px;
+  border: 2px solid var(--card-widget-content-border);
+  border-top-right-radius: 3px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 10px;
+  clip-path: polygon(0 10px, 10px 0, calc(100% - 3px) 0, 100% 3px, 100% calc(100% - 3px), calc(100% - 3px) 100%, 10px 100%, 0 calc(100% - 10px));
+  -webkit-box-shadow: 0 0 5px var(--card-widget-content-border) inset;
+  box-shadow: 0 0 5px var(--card-widget-content-border) inset;
+}
+.card-widget:not(.card-info) .card-tag-cloud:not(.card-friend-link-container)::before {
+  content: "";
+  width: 0px;
+  height: calc(100% - 20px);
+  position: absolute;
+  left: 0;
+  top: 5px;
+  background: var(--card-widget-content-background);
+  border-top: 5px solid var(--card-widget-content-border);
+  border-right: 5px solid var(--card-widget-content-border);
+  border-bottom: 5px solid var(--card-widget-content-border);
+  border-left: 5px solid transparent;
+  clip-path: polygon(0 0, 7px 5px, 7px calc(100% - 5px), 0 100%);
+}
+.card-widget:not(.card-info) .webinfo {
+  position: relative;
+  margin: 5px 5px 5px 5px !important;
+  background: var(--card-widget-content-background);
+  padding: 5px 5px 5px 8px;
+  border: 2px solid var(--card-widget-content-border);
+  border-top-right-radius: 3px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 10px;
+  clip-path: polygon(0 10px, 10px 0, calc(100% - 3px) 0, 100% 3px, 100% calc(100% - 3px), calc(100% - 3px) 100%, 10px 100%, 0 calc(100% - 10px));
+  -webkit-box-shadow: 0 0 5px var(--card-widget-content-border) inset;
+  box-shadow: 0 0 5px var(--card-widget-content-border) inset;
+}
+.card-widget:not(.card-info) .webinfo:not(.card-friend-link-container)::before {
+  content: "";
+  width: 0px;
+  height: calc(100% - 20px);
+  position: absolute;
+  left: 0;
+  top: 5px;
+  background: var(--card-widget-content-background);
+  border-top: 5px solid var(--card-widget-content-border);
+  border-right: 5px solid var(--card-widget-content-border);
+  border-bottom: 5px solid var(--card-widget-content-border);
+  border-left: 5px solid transparent;
+  clip-path: polygon(0 0, 7px 5px, 7px calc(100% - 5px), 0 100%);
+}
+.card-widget:not(.card-info) .webinfo .webinfo-item {
+  color: var(--card-widget-color) !important;
+}
+:root {
+  --hr-line-color: #e91417;
+}
+[data-theme="dark"] {
+  --hr-line-color: #4db7d5;
+}
+hr {
+  position: relative;
+  margin: 40px auto;
+  display: block;
+  height: 20px;
+  width: 100%;
+  background: transparent;
+  border: none;
+}
+hr:hover::before {
+  clip-path: polygon(0 0, 60px 100%, calc(100% - 30px) 100%, 100% 50%, calc(100% - 15px) 50%, calc(100% - 35px) calc(100% - 5px), 65px calc(100% - 5px), 15px 0);
+  -webkit-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -moz-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -o-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -ms-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+}
+hr:hover::after {
+  clip-path: polygon(0 50%, 35px 0, calc(100% - 60px) 0, 100% 100%, calc(100% - 15px) 100%, calc(100% - 65px) 5px, 35px 5px, 15px 50%);
+  -webkit-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -moz-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -o-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -ms-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+}
+hr::before {
+  display: block;
+  content: "";
+  height: 20px;
+  width: calc(50% + 60px);
+  left: 0px;
+  position: absolute;
+  background: -webkit-linear-gradient(right, var(--hr-line-color), transparent);
+  background: -moz-linear-gradient(right, var(--hr-line-color), transparent);
+  background: -o-linear-gradient(right, var(--hr-line-color), transparent);
+  background: -ms-linear-gradient(right, var(--hr-line-color), transparent);
+  background: linear-gradient(to left, var(--hr-line-color), transparent);
+  clip-path: polygon(0 100%, 60px 0, calc(100% - 30px) 0, 100% 50%, calc(100% - 15px) 50%, calc(100% - 35px) 5px, 65px 5px, 15px 100%);
+  -webkit-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -moz-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -o-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -ms-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+}
+hr::after {
+  display: block;
+  content: "";
+  height: 20px;
+  width: calc(50% + 60px);
+  right: 0px;
+  position: absolute;
+  background: -webkit-linear-gradient(left, var(--hr-line-color), transparent);
+  background: -moz-linear-gradient(left, var(--hr-line-color), transparent);
+  background: -o-linear-gradient(left, var(--hr-line-color), transparent);
+  background: -ms-linear-gradient(left, var(--hr-line-color), transparent);
+  background: linear-gradient(to right, var(--hr-line-color), transparent);
+  clip-path: polygon(0 50%, 35px 100%, calc(100% - 60px) 100%, 100% 0, calc(100% - 15px) 0, calc(100% - 65px) calc(100% - 5px), 35px calc(100% - 5px), 15px 50%);
+  -webkit-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -moz-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -o-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  -ms-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
+  transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17);
 }
 #footer {
   position: relative;
@@ -5665,6 +6003,39 @@ h1.page-title + .tag-cloud-list {
   margin-top: 40px;
   width: 100%;
   background: #000;
+}
+:root {
+  --title-prefix-color: #fff;
+  --title-prefix-background: rgba(25,25,25,0.5);
+  --title-prefix-shadow: #555;
+  --title-prefix-border: rgba(180,181,182,0.6);
+  --title-prefix-icon-color: #f58b49;
+  --title-prefix-corner-mark-color: #555759;
+  --title-prefix-corner-mark-background: #dd9f58;
+}
+[data-theme="dark"] {
+  --title-prefix-color: #8dc9ef;
+  --title-prefix-background: rgba(36,56,65,0.5);
+  --title-prefix-shadow: #182238;
+  --title-prefix-border: rgba(39,66,69,0.6);
+  --title-prefix-icon-color: #004e77;
+  --title-prefix-corner-mark-color: #92cef1;
+  --title-prefix-corner-mark-background: #37708f;
+}
+ol p,
+ul p {
+  margin: 0 0 8px;
+}
+li::marker {
+  color: #49b1f5;
+  font-weight: 600;
+  font-size: 1.05em;
+}
+li:hover::marker {
+  color: var(--pseudo-hover);
+}
+ul > li {
+  list-style-type: circle;
 }
 #article-container {
   word-wrap: break-word;
